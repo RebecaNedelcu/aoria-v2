@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Take the first step in creating your bespoke itinerary with Aoria.">
+  <title>Plan Your Trip — Aoria</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-header></div>
+  <main id="main">
+    <section class="section section--sand" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-intro">
+          <p class="eyebrow">Contact</p>
+          <h1 class="section-title" id="contact-title">Plan Your Trip</h1>
+          <p class="section-lead">Take the first step in creating your bespoke itinerary with us. Please complete this form, sharing as much information as possible, and we will be in touch to start planning your perfect vacation.</p>
+        </div>
+
+        <form class="enquiry-form" data-mock-form>
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first-name" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="start-date">Start date</label>
+            <input id="start-date" name="start-date" type="date">
+          </div>
+          <div class="field">
+            <label for="end-date">End date</label>
+            <input id="end-date" name="end-date" type="date">
+          </div>
+          <div class="field field--full">
+            <label for="people">How many people</label>
+            <input id="people" name="people" type="number" min="1">
+          </div>
+          <div class="field field--full">
+            <label for="dream-trip">Tell us about your dream trip</label>
+            <textarea id="dream-trip" name="dream-trip"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="button" type="submit">Plan your trip</button>
+            <p class="form-note">This is a visual mockup. Submitting the form will not send or store your details.</p>
+          </div>
+          <p class="form-status" role="status" tabindex="-1"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div data-footer></div>
+</body>
+</html>
