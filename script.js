@@ -19,9 +19,9 @@
     headerSlot.outerHTML = `
       <header class="site-header">
         <div class="header-inner">
-          <a class="brand" href="index.html" aria-label="Aoria home">
-            <span class="brand-mark" aria-hidden="true">AO</span>
-            <span class="brand-name">AORIA</span>
+          <a class="brand brand--header" href="index.html" aria-label="Aoria home">
+            <img class="brand-logo brand-logo--header" src="assets/brand/aoria-logo.png" width="3334" height="889" alt="">
+            <img class="brand-icon brand-icon--header" src="assets/brand/aoria-icon.png" width="1250" height="767" alt="">
           </a>
           <nav class="desktop-nav" aria-label="Primary navigation">${navLinks}</nav>
           <div class="header-actions">
@@ -36,7 +36,9 @@
       <div class="mobile-nav-layer" id="mobile-menu" aria-hidden="true">
         <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Site menu">
           <div class="mobile-menu-head">
-            <a class="brand" href="index.html" aria-label="Aoria home"><span class="brand-name">AORIA</span></a>
+            <a class="brand brand--mobile-menu" href="index.html" aria-label="Aoria home">
+              <img class="brand-logo brand-logo--mobile-menu" src="assets/brand/aoria-logo.png" width="3334" height="889" alt="">
+            </a>
             <button class="menu-close" type="button" aria-label="Close menu">Close menu</button>
           </div>
           <nav class="mobile-nav" aria-label="Mobile navigation">${navLinks}</nav>
@@ -51,9 +53,8 @@
       <footer class="site-footer">
         <div class="container footer-main">
           <div>
-            <a class="brand" href="index.html" aria-label="Aoria home">
-              <span class="brand-mark" aria-hidden="true">AO</span>
-              <span class="brand-name">AORIA</span>
+            <a class="brand brand--footer" href="index.html" aria-label="Aoria home">
+              <img class="brand-logo brand-logo--tagline" src="assets/brand/aoria-logo-tagline.png" width="3334" height="1285" alt="">
             </a>
             <p class="footer-brand-copy">Concierge travel agency for bespoke luxury holidays.</p>
           </div>
