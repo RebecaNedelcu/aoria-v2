@@ -5,7 +5,7 @@
   const navItems = [
     ["destinations", "Destinations", "destinations.html"],
     ["experiences", "Experiences", "experiences.html"],
-    ["about", "About", "about.html"],
+    ["about", "About Us", "about.html"],
     ["contact", "Contact", "contact.html"]
   ];
 
@@ -25,7 +25,7 @@
           </a>
           <nav class="desktop-nav" aria-label="Primary navigation">${navLinks}</nav>
           <div class="header-actions">
-            <button class="language-button" type="button" data-demo="Language selection is a visual placeholder." aria-label="Choose language">Language</button>
+            <button class="language-button" type="button" data-demo="Language selection is a visual placeholder." aria-label="Choose language, current language English">EN</button>
             <a class="button button--compact" href="contact.html">Plan your trip</a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
               <span>Menu</span><span class="menu-icon" aria-hidden="true"></span>
@@ -47,6 +47,17 @@
       </div>`;
   }
 
+  const siteHeader = document.querySelector(".site-header");
+
+  if (page === "home" && siteHeader) {
+    const updateHomeHeader = () => {
+      siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+
+    updateHomeHeader();
+    window.addEventListener("scroll", updateHomeHeader, { passive: true });
+  }
+
   const footerSlot = document.querySelector("[data-footer]");
   if (footerSlot) {
     footerSlot.outerHTML = `
@@ -65,6 +76,29 @@
               <li>Phone number to be confirmed</li>
               <li>Physical address to be confirmed</li>
             </ul>
+            <div class="footer-social-group">
+              <h2 class="footer-title">Follow</h2>
+              <div class="footer-social-links" aria-label="Social media">
+                <button class="social-button" type="button" aria-label="Instagram" data-demo="Instagram profile link has not been supplied yet.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle class="social-button__dot" cx="17.5" cy="6.5" r="1"></circle>
+                  </svg>
+                </button>
+                <button class="social-button" type="button" aria-label="Facebook" data-demo="Facebook profile link has not been supplied yet.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.6 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H8v3h2.6v8h3z"></path>
+                  </svg>
+                </button>
+                <button class="social-button" type="button" aria-label="LinkedIn" data-demo="LinkedIn profile link has not been supplied yet.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="5.5" cy="5.5" r="1.7"></circle>
+                    <path d="M4 9h3v11H4zM10 9h3v1.5c.8-1.1 2-1.8 3.7-1.8 3 0 4.3 2 4.3 5.4V20h-3v-5.3c0-1.7-.6-2.8-2.2-2.8-1.7 0-2.8 1.1-2.8 3.3V20h-3z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
           <div>
             <h2 class="footer-title">Explore</h2>
