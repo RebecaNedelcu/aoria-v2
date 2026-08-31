@@ -3,7 +3,7 @@
 :root {
   --ink: #000000;
   --ink-soft: #181818;
-  --navy: #1a293a;
+  --navy: #02102a;
   --pine: #127749;
   --pine-dark: #006035;
   --sand: #f1ebe5;
@@ -489,8 +489,13 @@ body[data-page="home"] .site-header:not(.is-scrolled) .header-actions .button:ho
   left: 0;
 }
 
-.menu-icon::before { top: -6px; }
-.menu-icon::after { top: 6px; }
+.menu-icon::before {
+  top: -6px;
+}
+
+.menu-icon::after {
+  top: 6px;
+}
 
 .mobile-nav-layer {
   position: fixed;
@@ -548,8 +553,13 @@ body[data-page="home"] .site-header:not(.is-scrolled) .header-actions .button:ho
   background: currentColor;
 }
 
-.menu-close::before { transform: translate(-50%, -50%) rotate(45deg); }
-.menu-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.menu-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 .mobile-nav {
   display: grid;
@@ -579,12 +589,26 @@ body[data-page="home"] .site-header:not(.is-scrolled) .header-actions .button:ho
   padding-block: clamp(80px, 9vw, 144px);
 }
 
-.section--mist { background: var(--mist); }
-.section--sand { background: var(--sand); }
-.section--navy { background: var(--navy); color: var(--paper); }
+.section--mist {
+  background: var(--mist);
+}
 
-.section--navy .eyebrow { color: rgba(255, 255, 255, 0.62); }
-.section--navy .section-lead { color: rgba(255, 255, 255, 0.68); }
+.section--sand {
+  background: var(--sand);
+}
+
+.section--navy {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+.section--navy .eyebrow {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.section--navy .section-lead {
+  color: rgba(255, 255, 255, 0.68);
+}
 
 .section-heading-row {
   display: grid;
@@ -1264,7 +1288,7 @@ body[data-page="destinations"] .listing-entry {
   line-height: 1.4;
 }
 
-.listing-entry__content > p:not(.eyebrow):not(.listing-entry__headline) {
+.listing-entry__content>p:not(.eyebrow):not(.listing-entry__headline) {
   max-width: 62ch;
   margin-bottom: 28px;
   color: var(--grey-800);
@@ -1356,7 +1380,7 @@ body[data-page="destinations"] .listing-entry {
 }
 
 .detail-lead,
-.detail-hero__content > p:not(.eyebrow) {
+.detail-hero__content>p:not(.eyebrow) {
   max-width: 32ch;
   margin-bottom: 0;
   font-size: clamp(21px, 2vw, 30px);
@@ -1364,7 +1388,7 @@ body[data-page="destinations"] .listing-entry {
   line-height: 1.38;
 }
 
-.detail-hero > .visual-art,
+.detail-hero>.visual-art,
 .detail-hero__art {
   min-height: 100%;
 }
@@ -1440,13 +1464,13 @@ body[data-page="destinations"] .listing-entry {
   background: var(--sand);
 }
 
-.signature-section > .container,
+.signature-section>.container,
 .signature-section .container {
   display: block;
 }
 
 .signature-section .section-heading,
-.signature-section > .section-heading {
+.signature-section>.section-heading {
   margin-bottom: clamp(40px, 5vw, 72px);
 }
 
@@ -1493,8 +1517,8 @@ body[data-page="destinations"] .listing-entry {
 
 .travel-section__grid,
 .journey-section__grid,
-.travel-section > .container,
-.journey-section > .container {
+.travel-section>.container,
+.journey-section>.container {
   display: grid;
   grid-template-columns: minmax(180px, 4fr) minmax(0, 8fr);
   gap: clamp(40px, 7vw, 112px);
@@ -1532,7 +1556,7 @@ body[data-page="about"] .page-hero__grid {
   text-align: center;
 }
 
-body[data-page="about"] .page-hero__grid > .display-title {
+body[data-page="about"] .page-hero__grid>.display-title {
   margin-inline: auto;
 }
 
@@ -1864,6 +1888,7 @@ body[data-page="about"] .about-process-heading .display-title {
 }
 
 @media (max-width: 1100px) {
+
   .section-heading-row,
   .closing-cta__inner,
   .page-hero__grid,
@@ -1898,7 +1923,7 @@ body[data-page="about"] .about-process-heading .display-title {
   }
 
   .desktop-nav,
-  .header-actions > .button {
+  .header-actions>.button {
     display: none;
   }
 
@@ -1921,7 +1946,7 @@ body[data-page="about"] .about-process-heading .display-title {
     min-height: 520px;
   }
 
-  .detail-hero > .visual-art,
+  .detail-hero>.visual-art,
   .detail-hero__art {
     min-height: 520px;
   }
@@ -1951,13 +1976,15 @@ body[data-page="about"] .about-process-heading .display-title {
     grid-template-columns: 1fr 1fr;
   }
 
-  .footer-main > :first-child {
+  .footer-main> :first-child {
     grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 760px) {
-  :root { --header-height: 68px; }
+  :root {
+    --header-height: 68px;
+  }
 
   .home-hero {
     background-position: 50% 50%;
@@ -1996,8 +2023,8 @@ body[data-page="about"] .about-process-heading .display-title {
   .editorial-section,
   .travel-section__grid,
   .journey-section__grid,
-  .travel-section > .container,
-  .journey-section > .container {
+  .travel-section>.container,
+  .journey-section>.container {
     grid-template-columns: 1fr;
     gap: 22px;
   }
@@ -2063,8 +2090,13 @@ body[data-page="about"] .about-process-heading .display-title {
     border-left: 1px solid;
   }
 
-  .experience-card { border-left-color: rgba(255, 255, 255, 0.22); }
-  .moment-card { border-left-color: var(--grey-300); }
+  .experience-card {
+    border-left-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .moment-card {
+    border-left-color: var(--grey-300);
+  }
 
   .experience-list-card,
   .experience-list-card:nth-child(even) {
@@ -2123,17 +2155,18 @@ body[data-page="about"] .about-process-heading .display-title {
     padding: 72px 20px;
   }
 
-  .detail-hero > .visual-art,
+  .detail-hero>.visual-art,
   .detail-hero__art {
     min-height: 360px;
   }
 
-  .footer-main > :first-child {
+  .footer-main> :first-child {
     grid-column: auto;
   }
 }
 
 @media (max-width: 520px) {
+
   .container,
   .header-inner {
     padding-inline: 16px;
@@ -2190,7 +2223,9 @@ body[data-page="about"] .about-process-heading .display-title {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 
   *,
   *::before,
@@ -2203,6 +2238,7 @@ body[data-page="about"] .about-process-heading .display-title {
 }
 
 @media print {
+
   .site-header,
   .mobile-nav-layer,
   .toast,
