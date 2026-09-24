@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aoria creates thoughtful, highly personalised luxury journeys.">
-  <title>Aoria — Your journey starts here</title>
+  <meta name="description" content="AORIA creates thoughtfully curated, deeply personal journeys designed to stay with you long after you return home.">
+  <title>AORIA — Travel, beautifully considered</title>
   <link rel="icon" type="image/png" href="assets/brand/aoria-icon.png">
   <link rel="apple-touch-icon" href="assets/brand/aoria-icon.png">
+  <link rel="preload" as="image" href="assets/images/hero-coast.webp" media="(min-width: 761px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero-coast-mobile.webp" media="(max-width: 760px)" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -16,25 +18,45 @@
 
   <main id="main">
     <section class="home-hero" aria-labelledby="home-title">
+      <video class="home-hero-video" id="home-hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="assets/videos/hero-coast.mp4" data-mobile-src="assets/videos/hero-coast-mobile.mp4"></video>
       <div class="container home-hero-grid">
         <div class="home-hero-content">
-          <p class="eyebrow">Bespoke luxury holidays</p>
-          <h1 class="display-title" id="home-title">Your journey starts here</h1>
-          <p class="home-hero-copy">From inspired dream to cherished memory, Aoria is with you every step of your journey.</p>
-          <a class="button button--inverse" href="contact.html">Plan your trip</a>
+          <h1 class="display-title" id="home-title">Travel, beautifully considered.</h1>
+          <p class="home-hero-kicker">There are places you go.<br>And places you never quite leave behind.</p>
+          <p class="home-hero-copy">AORIA creates journeys around the latter — thoughtfully curated, deeply personal and designed to stay with you long after you’ve returned home.</p>
+          <a class="button button--inverse" href="contact.html">Begin your journey</a>
         </div>
       </div>
       <div class="home-hero-logo" aria-hidden="true">
         <img src="assets/brand/aoria-icon.png" width="1250" height="767" alt="">
+      </div>
+      <button class="home-hero-motion" type="button" aria-label="Play background video" aria-controls="home-hero-video" hidden>
+        <svg class="home-hero-motion__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"></path></svg>
+        <svg class="home-hero-motion__play" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z"></path></svg>
+      </button>
+    </section>
+
+    <section class="section home-intro" aria-labelledby="home-intro-title">
+      <div class="container home-intro__inner">
+        <p class="eyebrow">Your journey starts here</p>
+        <h2 class="section-heading" id="home-intro-title">Some places stay with you.</h2>
+        <p class="home-intro__lead">A view you weren’t expecting. A table you never wanted to leave. A place that somehow felt like yours from the moment you arrived.</p>
+        <p>We believe the best journeys are made of those moments.</p>
+        <p>At AORIA, we bring together beautiful places, thoughtful experiences and all the little details in between — creating travel that feels personal, effortless and entirely your own.</p>
+        <a class="button button--secondary" href="contact.html">Begin your journey</a>
       </div>
     </section>
 
     <section class="section home-about" aria-labelledby="home-about-title">
       <div class="container home-about__inner">
         <div class="home-about__copy">
-          <h2 class="section-heading" id="home-about-title">Travel, made entirely personal</h2>
-          <p>Aoria is a luxury travel agency creating thoughtful, highly personalised journeys for people who value their time and want to experience the world exceptionally well. From the first idea to your return home, every detail is considered around you.</p>
-          <a class="button button--secondary" href="about.html">About Us</a>
+          <p class="eyebrow">About AORIA</p>
+          <h2 class="section-heading" id="home-about-title">Travel, considered differently.</h2>
+          <p>AORIA was created from a love of discovering places worth knowing — and the belief that the way you experience them matters just as much as where you go.</p>
+          <p>We take the time to understand you, then use our experience, relationships and curiosity for the world to shape something that feels completely your own.</p>
+          <p>No endless options. No one-size-fits-all itineraries.</p>
+          <p>Just thoughtful travel, made personal.</p>
+          <a class="button button--secondary" href="about.html">Discover AORIA</a>
         </div>
         <div class="home-about__media">
           <img src="assets/images/about-pool.jpg" width="1800" height="1200" loading="lazy" alt="Beachfront boutique hotel pool surrounded by palm trees in Thailand">
@@ -42,101 +64,99 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="destinations-title">
+    <section class="section home-edit" aria-labelledby="destinations-title">
       <div class="container">
-        <header class="section-heading-row section-heading-row--centered">
-          <div class="section-heading-stack">
-            <h2 class="section-heading" id="destinations-title">Handpicked destinations</h2>
-            <p class="section-lead">Where are your dreams leading you?</p>
-          </div>
-        </header>
-
+        <div class="home-edit__copy">
+          <p class="eyebrow">The AORIA Edit</p>
+          <h2 class="section-heading" id="destinations-title">A little black book of places worth knowing.</h2>
+          <p>There are the places everyone knows.</p>
+          <p>And then there are the ones someone has to tell you about.</p>
+          <p>The AORIA Edit is our ever-growing collection of both — places we love, places we return to and discoveries we can’t wait to share.</p>
+          <p>From Mediterranean summers to faraway adventures and somewhere completely unexpected, consider this your starting point.</p>
+        </div>
         <div class="destination-grid">
           <article class="destination-card">
-            <div class="visual-art visual-art--scandinavia" role="img" aria-label="Snow-covered Lofoten mountains reflected in a still Norwegian fjord"></div>
+            <div class="visual-art visual-art--mediterranean" role="img" aria-label="Amalfi’s waterfront and hillside buildings at sunset on the Italian coast"></div>
             <div class="destination-card__body">
-              <h3>Scandinavia</h3>
-              <p>A land of quiet beauty, where dramatic fjords, elegant cities and endless skies create journeys that feel both inspiring and restorative.</p>
-              <a class="card-link" href="destination-scandinavia.html">Discover Scandinavia</a>
+              <h3>The Mediterranean</h3>
+              <p>For summers you'll wish could last forever.</p>
+              <p class="destination-countries">Italy · Greece · France · Spain · Turkey</p>
+              <a class="card-link" href="destination-mediterranean.html">Discover The Mediterranean</a>
             </div>
           </article>
-
           <article class="destination-card">
-            <div class="visual-art visual-art--southeast-asia" role="img" aria-label="Layered rice terraces sweeping across a mountain valley in Vietnam"></div>
+            <div class="visual-art visual-art--far-east" role="img" aria-label="Layered rice terraces sweeping across a mountain valley in Vietnam"></div>
             <div class="destination-card__body">
-              <h3>South East Asia</h3>
-              <p>A vibrant world of colour, flavour and contrast, where every journey brings new sensations, stories and discoveries.</p>
-              <a class="card-link" href="destination-southeast-asia.html">Discover South East Asia</a>
+              <h3>The Far East</h3>
+              <p>For going further — and discovering something entirely new.</p>
+              <p class="destination-countries">Japan · Vietnam · Thailand · Indonesia</p>
+              <a class="card-link" href="destination-far-east.html">Discover The Far East</a>
             </div>
           </article>
-
           <article class="destination-card">
-            <div class="visual-art visual-art--new-zealand" role="img" aria-label="Snow-covered Aoraki Mount Cook reflected in the still water of Hooker Lake"></div>
+            <div class="visual-art visual-art--wild" role="img" aria-label="An elephant family crossing open grassland in the Maasai Mara"></div>
             <div class="destination-card__body">
-              <h3>New Zealand</h3>
-              <p>A place of extraordinary natural beauty, where mountains, glaciers and wild coastlines make every moment feel unforgettable.</p>
-              <a class="card-link" href="destination-new-zealand.html">Discover New Zealand</a>
-            </div>
-          </article>
-
-          <article class="destination-card">
-            <div class="visual-art visual-art--african-wildlife" role="img" aria-label="An elephant family crossing open grassland in the Maasai Mara"></div>
-            <div class="destination-card__body">
-              <h3>African Wildlife</h3>
-              <p>There is nothing quite like seeing wildlife in its natural world - raw, moving and impossible to forget.</p>
-              <a class="card-link" href="destination-african-wildlife.html">Discover African Wildlife</a>
+              <h3>The Wild</h3>
+              <p>For the kind of journey that stays with you.</p>
+              <p class="destination-countries">South Africa · Kenya · Tanzania · Botswana</p>
+              <a class="card-link" href="destination-the-wild.html">Discover The Wild</a>
             </div>
           </article>
         </div>
         <div class="section-action">
-          <a class="button button--secondary" href="destinations.html">Discover destinations</a>
+          <a class="button button--secondary" href="destinations.html">Explore The AORIA Edit</a>
         </div>
       </div>
     </section>
 
-    <section class="section section--navy" aria-labelledby="experiences-title">
-      <div class="container">
-        <header class="section-heading-row section-heading-row--centered">
-          <div class="section-heading-stack">
-            <h2 class="section-heading" id="experiences-title">Escape the Ordinary</h2>
-            <p class="section-lead">Travel is about more than where you go. Discover carefully chosen experiences that bring you closer to a place, from its landscapes and flavours to its people and traditions.</p>
-          </div>
-        </header>
-
+    <section class="section section--navy home-experiences" aria-labelledby="experiences-title">
+      <div class="container home-experiences__inner">
+        <div class="home-experiences__copy">
+          <p class="eyebrow">Experiences</p>
+          <h2 class="section-heading" id="experiences-title">Made to be remembered.</h2>
+          <p>The places matter. But often, it’s what happens while you’re there that becomes the story you tell for years.</p>
+          <p>A boat waiting just for you. Dinner somewhere you’d never have found on your own. Waking before sunrise for something you may only experience once in your life. Or an afternoon with absolutely nowhere you need to be.</p>
+          <p>We look for those moments — and make them part of the journey.</p>
+        </div>
         <div class="experience-grid">
-          <article class="experience-card">
-            <h3>Safari</h3>
-            <h4>Closer to the wild</h4>
-            <p>Private wildlife journeys shaped by exceptional guiding, remote landscapes and unforgettable encounters.</p>
-          </article>
-          <article class="experience-card">
-            <h3>Islands</h3>
-            <h4>Where the world feels far away</h4>
-            <p>Secluded shores, private villas and days that unfold entirely at your own pace.</p>
-          </article>
-          <article class="experience-card">
-            <h3>Gastronomy</h3>
-            <h4>Discover a place through its table</h4>
-            <p>Journeys shaped by memorable tables, local flavours and the people behind them.</p>
-          </article>
-          <article class="experience-card">
-            <h3>Culture</h3>
-            <h4>Go beyond what can be seen</h4>
-            <p>Private access, local insight and a more meaningful way to understand a place.</p>
-          </article>
-          <article class="experience-card">
-            <h3>Adventure</h3>
-            <h4>Go where the journey feels alive</h4>
-            <p>Remarkable landscapes, private access and experiences that take you beyond the familiar.</p>
-          </article>
-          <article class="experience-card">
-            <h3>Wellness</h3>
-            <h4>Time to return to yourself</h4>
-            <p>Restorative escapes created around space, nature and the way you want to feel.</p>
-          </article>
+          <a class="experience-card" href="experiences.html#private-rare">
+            <img class="experience-card__image" src="assets/images/experience-private-rare.jpg" width="1536" height="1024" loading="lazy" alt="">
+            <div class="experience-card__body">
+              <h3>Private &amp; Rare</h3>
+              <p>Some experiences are worth going a little further for.</p>
+            </div>
+          </a>
+          <a class="experience-card" href="experiences.html#around-the-table">
+            <img class="experience-card__image" src="assets/images/experience-around-the-table.jpg" width="1536" height="1024" loading="lazy" alt="">
+            <div class="experience-card__body">
+              <h3>Around the Table</h3>
+              <p>Some of the best memories begin around a table.</p>
+            </div>
+          </a>
+          <a class="experience-card" href="experiences.html#into-the-wild">
+            <img class="experience-card__image" src="assets/images/experience-into-the-wild.jpg" width="1536" height="1024" loading="lazy" alt="">
+            <div class="experience-card__body">
+              <h3>Into the Wild</h3>
+              <p>There are experiences that make the rest of the world disappear for a while.</p>
+            </div>
+          </a>
+          <a class="experience-card" href="experiences.html#slower-days">
+            <img class="experience-card__image" src="assets/images/experience-slower-days.jpg" width="1536" height="1024" loading="lazy" alt="">
+            <div class="experience-card__body">
+              <h3>Slower Days</h3>
+              <p>Not every journey needs a full itinerary.</p>
+            </div>
+          </a>
+          <a class="experience-card" href="experiences.html#something-to-celebrate">
+            <img class="experience-card__image" src="assets/images/experience-something-to-celebrate.jpg" width="1536" height="1024" loading="lazy" alt="">
+            <div class="experience-card__body">
+              <h3>Something to Celebrate</h3>
+              <p>Some journeys deserve a little more thought.</p>
+            </div>
+          </a>
         </div>
         <div class="section-action">
-          <a class="button button--inverse" href="experiences.html">Explore more experiences</a>
+          <a class="button button--inverse" href="experiences.html">Discover experiences</a>
         </div>
       </div>
     </section>
@@ -146,7 +166,6 @@
         <header class="section-heading-row">
           <h2 class="section-heading" id="services-title">Services</h2>
         </header>
-
         <div class="service-list">
           <article class="service-item">
             <h3>Bespoke Planning</h3>
@@ -175,12 +194,33 @@
       </div>
     </section>
 
+    <section class="section home-touch" aria-labelledby="home-touch-title">
+      <div class="container home-touch__inner">
+        <div class="home-touch__copy">
+          <p class="eyebrow">The AORIA Touch</p>
+          <h2 class="section-title" id="home-touch-title">It’s all in the details.</h2>
+          <p>The best journeys have a way of feeling effortless.</p>
+          <p>The right hotel. The room with the better view. A perfectly timed arrival. The table worth having. Someone knowing you’re celebrating before you even walk through the door.</p>
+          <p>These are the details we think about so you don’t have to.</p>
+          <p>From the first idea until you’re home again, we quietly bring everything together around you.</p>
+          <a class="button button--secondary" href="aoria-touch.html">Discover The AORIA Touch</a>
+        </div>
+        <div class="home-touch__media">
+          <img src="assets/images/aoria-touch-arrival.jpg" width="1536" height="1024" loading="lazy" alt="Fresh flowers and a welcome card in a seaside hotel room">
+        </div>
+      </div>
+    </section>
+
     <section class="closing-cta" aria-labelledby="home-closing-title">
       <div class="container closing-cta__inner">
         <div class="closing-cta__copy">
-          <h2 id="home-closing-title">For Moments Worth Travelling For</h2>
-          <p>From extraordinary places to beautifully considered details, we design journeys that feel effortless in the moment and unforgettable for years to come.</p>
-          <a class="button button--inverse" href="contact.html">Plan your trip</a>
+          <h2 id="home-closing-title">WHERE TO NEXT?</h2>
+          <p>Maybe you’ve been dreaming about it for years.</p>
+          <p>Maybe you saw a photograph yesterday and haven’t stopped thinking about it since.</p>
+          <p>Or maybe you don’t know where you want to go yet — only that you want to go somewhere.</p>
+          <p>That’s more than enough for us to start.</p>
+          <p>Tell us what you’re dreaming of. We’ll take it from there.</p>
+          <a class="button button--inverse" href="contact.html">Start planning</a>
         </div>
         <div class="closing-cta__media">
           <img src="assets/images/adventure.jpg" width="2400" height="1600" alt="A glacier flowing between dramatic mountain peaks">

@@ -2,10 +2,85 @@
   "use strict";
 
   const page = document.body.dataset.page || "home";
+
+  const heroVideo = document.querySelector(".home-hero-video");
+  const motionButton = document.querySelector(".home-hero-motion");
+  if (heroVideo && motionButton && heroVideo.canPlayType("video/mp4")) {
+    const hero = heroVideo.closest(".home-hero");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const connection = navigator.connection;
+    const prefersStill = () => reducedMotion.matches || connection?.saveData ||
+      ["slow-2g", "2g"].includes(connection?.effectiveType);
+    let motionEnabled = !prefersStill();
+    let heroVisible = hero.getBoundingClientRect().bottom > 0 &&
+      hero.getBoundingClientRect().top < window.innerHeight;
+    let mediaFailed = false;
+
+    const updateMotionButton = () => {
+      motionButton.classList.toggle("is-playing", motionEnabled);
+      motionButton.setAttribute("aria-label", motionEnabled ? "Pause background video" : "Play background video");
+    };
+
+    const updatePlayback = () => {
+      updateMotionButton();
+      if (!motionEnabled || !heroVisible || document.hidden || mediaFailed) {
+        heroVideo.pause();
+        return;
+      }
+
+      // Attach just one local source, only when motion is allowed.
+      if (!heroVideo.getAttribute("src")) {
+        heroVideo.src = window.matchMedia("(max-width: 760px)").matches
+          ? heroVideo.dataset.mobileSrc
+          : heroVideo.dataset.src;
+      }
+      heroVideo.muted = true;
+      heroVideo.play().catch((error) => {
+        // Pausing while a video is loading cancels its pending play request.
+        if (error.name === "AbortError") return;
+        motionEnabled = false;
+        updateMotionButton();
+      });
+    };
+
+    heroVideo.addEventListener("playing", () => heroVideo.classList.add("is-ready"));
+    heroVideo.addEventListener("error", () => {
+      mediaFailed = true;
+      heroVideo.classList.remove("is-ready");
+      motionButton.hidden = true;
+    });
+
+    motionButton.hidden = false;
+    motionButton.addEventListener("click", () => {
+      motionEnabled = !motionEnabled;
+      updatePlayback();
+    });
+
+    const updatePreferences = () => {
+      motionEnabled = !prefersStill();
+      if (!motionEnabled) heroVideo.classList.remove("is-ready");
+      updatePlayback();
+    };
+    reducedMotion.addEventListener("change", updatePreferences);
+    connection?.addEventListener("change", updatePreferences);
+    document.addEventListener("visibilitychange", updatePlayback);
+
+    if ("IntersectionObserver" in window) {
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        heroVisible = entry.isIntersecting;
+        updatePlayback();
+      });
+      heroObserver.observe(hero);
+    }
+
+    updatePlayback();
+  }
+
   const navItems = [
-    ["destinations", "Destinations", "destinations.html"],
+    ["about", "About AORIA", "about.html"],
+    ["destinations", "The AORIA Edit", "destinations.html"],
     ["experiences", "Experiences", "experiences.html"],
-    ["about", "About Us", "about.html"],
+    ["touch", "The AORIA Touch", "aoria-touch.html"],
     ["contact", "Contact", "contact.html"]
   ];
 
@@ -26,7 +101,7 @@
           <nav class="desktop-nav" aria-label="Primary navigation">${navLinks}</nav>
           <div class="header-actions">
             <button class="language-button" type="button" data-demo="Language selection is a visual placeholder." aria-label="Choose language, current language English">EN</button>
-            <a class="button button--compact" href="contact.html">Plan your trip</a>
+            <a class="button button--compact" href="contact.html">Begin your journey</a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
               <span>Menu</span><span class="menu-icon" aria-hidden="true"></span>
             </button>
@@ -42,7 +117,7 @@
             <button class="menu-close" type="button" aria-label="Close menu">Close menu</button>
           </div>
           <nav class="mobile-nav" aria-label="Mobile navigation">${navLinks}</nav>
-          <a class="button mobile-menu-cta" href="contact.html">Plan your trip</a>
+          <a class="button mobile-menu-cta" href="contact.html">Begin your journey</a>
         </div>
       </div>`;
   }
@@ -72,9 +147,8 @@
           <div>
             <h2 class="footer-title">Contact</h2>
             <ul class="footer-contact">
-              <li>Email address to be confirmed</li>
-              <li>Phone number to be confirmed</li>
-              <li>Physical address to be confirmed</li>
+              <li><a href="mailto:hello@aoria-travel.com">hello@aoria-travel.com</a></li>
+              <li><a href="tel:+40745621200">+40 745 621 200</a></li>
             </ul>
             <div class="footer-social-group">
               <h2 class="footer-title">Follow</h2>
@@ -105,16 +179,34 @@
             <nav aria-label="Footer navigation">
               <ul class="footer-nav">
                 ${navItems.map(([, label, href]) => `<li><a href="${href}">${label}</a></li>`).join("")}
-                <li><button class="footer-link-button" type="button" data-demo="FAQ content has not been supplied for this mockup.">FAQ</button></li>
+                <li><a href="privacy-policy.html"${activeAttribute("privacy")}>Privacy Policy</a></li>
               </ul>
             </nav>
           </div>
         </div>
         <div class="container footer-bottom">
           <span>© 2026 Aoria. All rights reserved.</span>
+          <a class="footer-anpc" href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener noreferrer" aria-label="ANPC — Soluționarea Alternativă a Litigiilor">
+            <img src="assets/brand/anpc-sal.svg" width="202" height="50" loading="lazy" alt="ANPC SAL">
+          </a>
         </div>
       </footer>`;
   }
+
+  const whatsappLink = document.createElement("a");
+  whatsappLink.className = "whatsapp-fab";
+  whatsappLink.href = "https://wa.me/40745621200";
+  whatsappLink.target = "_blank";
+  whatsappLink.rel = "noopener noreferrer";
+  whatsappLink.setAttribute("aria-label", "Chat with AORIA on WhatsApp");
+  whatsappLink.title = "Chat with AORIA on WhatsApp";
+  const whatsappArtwork = document.createElement("img");
+  whatsappArtwork.src = "assets/brand/whatsapp-icon.svg";
+  whatsappArtwork.width = 52;
+  whatsappArtwork.height = 52;
+  whatsappArtwork.alt = "";
+  whatsappLink.appendChild(whatsappArtwork);
+  document.body.appendChild(whatsappLink);
 
   const menuLayer = document.querySelector(".mobile-nav-layer");
   const menuToggle = document.querySelector(".menu-toggle");
