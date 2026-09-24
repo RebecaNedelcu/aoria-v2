@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Take the first step in creating your bespoke itinerary with Aoria.">
-  <title>Plan Your Trip — Aoria</title>
+  <title>Begin your journey — Aoria</title>
   <link rel="icon" type="image/png" href="assets/brand/aoria-icon.png">
   <link rel="apple-touch-icon" href="assets/brand/aoria-icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -17,8 +17,8 @@
     <section class="section section--sand" aria-labelledby="contact-title">
       <div class="container contact-layout">
         <div class="contact-intro">
-          <h1 class="section-title" id="contact-title">Plan Your Trip</h1>
-          <p class="section-lead">Take the first step in creating your bespoke itinerary with us. Please complete this form, sharing as much information as possible, and we will be in touch to start planning your perfect vacation.</p>
+          <h1 class="section-title" id="contact-title">Begin your journey</h1>
+          <p class="section-lead">Tell us about the journey you have in mind. Share what you know so far, and we’ll help shape the rest.</p>
         </div>
 
         <form class="enquiry-form" data-mock-form>
@@ -31,31 +31,31 @@
             <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
           </div>
           <div class="field">
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
+            <label for="traveller-count">Number of travellers</label>
+            <input id="traveller-count" name="traveller-count" type="number" min="1" step="1" inputmode="numeric" required>
           </div>
           <div class="field">
-            <label for="phone">Phone number</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel">
-          </div>
-          <div class="field">
-            <label for="start-date">Start date</label>
-            <input id="start-date" name="start-date" type="date">
-          </div>
-          <div class="field">
-            <label for="end-date">End date</label>
-            <input id="end-date" name="end-date" type="date">
+            <label for="traveller-ages">Age of travellers</label>
+            <input id="traveller-ages" name="traveller-ages" type="text" placeholder="For example, 34, 32, 8">
           </div>
           <div class="field field--full">
-            <label for="people">How many people</label>
-            <input id="people" name="people" type="number" min="1">
+            <label for="special-requirements">Anything else we need to know?</label>
+            <textarea id="special-requirements" name="special-requirements" placeholder="Special requirements or preferences"></textarea>
           </div>
-          <div class="field field--full">
-            <label for="dream-trip">Tell us about your dream trip</label>
-            <textarea id="dream-trip" name="dream-trip"></textarea>
+          <div class="field">
+            <label for="travel-dates">Travel dates</label>
+            <input id="travel-dates" name="travel-dates" type="text" placeholder="Exact or approximate dates">
           </div>
+          <div class="field">
+            <label for="destinations">Destination(s)</label>
+            <input id="destinations" name="destinations" type="text" placeholder="Where would you like to go?">
+          </div>
+          <label class="privacy-consent">
+            <input name="privacy-consent" type="checkbox" required>
+            <span>I consent to AORIA using the information I provide to respond to my travel enquiry, as described in the <a href="privacy-policy.html">Privacy Policy</a>.</span>
+          </label>
           <div class="form-actions">
-            <button class="button" type="submit">Plan your trip</button>
+            <button class="button" type="submit">Begin your journey</button>
             <p class="form-note">This is a visual mockup. Submitting the form will not send or store your details.</p>
           </div>
           <p class="form-status" role="status" tabindex="-1"></p>
